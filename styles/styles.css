@@ -1,0 +1,299 @@
+/* Notes / Links
+min vs max width: https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/
+
+*/
+
+/* Import stytles */
+
+/* Bai Jamjuree: font-family: 'Bai Jamjuree', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+/* Custom Properties  */
+
+:root {
+  /* Primary */
+  --strong-cyan: hsl(171, 66%, 44%);
+  --light-blue: hsl(233, 100%, 69%);
+  /* Neutral */
+  --dark-grayish-blue: hsl(210, 10%, 33%);
+  --grayish-blue: hsl(201, 11%, 66%);
+}
+
+/* Resets */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* prevent side scroll */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Styles */
+
+p {
+  font-size: 1.8rem;
+  margin-bottom: 6rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--grayish-blue);
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: var(--dark-grayish-blue);
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: var(--dark-grayish-blue);
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-grayish-blue);
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+/* Make images responsive and easier to control */
+img {
+  max-width: 100%;
+  margin-bottom: 3rem;
+  height: auto;
+}
+
+/* Button alignment */
+.flex-btn {
+  display: flex;
+  flex-direction: column;
+  /* t-r-b-l */
+  margin: 0 0 12rem 0;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn {
+  font-family: "Bai Jamjuree", sans-serif;
+  width: 35rem;
+  height: 6rem;
+  text-align: center;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  font-size: 2.2rem;
+  align-items: center;
+}
+.btn-ios {
+  background-color: var(--strong-cyan);
+  box-shadow: 5px 10px 15px #d5f6eb;
+}
+.btn-ios:hover {
+  border: 0.4rem solid var(--strong-cyan);
+  color: var(--strong-cyan);
+  background-color: #fafafa;
+}
+.btn-mac {
+  background-color: var(--light-blue);
+  box-shadow: 5px 10px 15px #eceeef;
+}
+.btn-mac:hover {
+  border: 0.4rem solid var(--light-blue);
+  color: var(--light-blue);
+  background-color: #fafafa;
+}
+
+/* Background header */
+header {
+  background: url(/images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: 100%;
+  gap: 1ch;
+  /* t-r-b-l */
+  padding: 0 3rem 0 3rem;
+}
+
+.snip-header {
+  display: grid;
+  text-align: center;
+  padding: 0 2rem 0 2rem;
+}
+
+/* Header Content */
+.header-section {
+  margin-top: 7rem;
+}
+
+.top-logo {
+  margin-bottom: 5rem;
+}
+
+.comp-img {
+  margin-bottom: 5rem;
+}
+
+/* Grid */
+.container {
+  display: grid;
+  text-align: center;
+  /* t-r-b-l */
+  padding: 0 3rem 4rem 3rem;
+}
+
+/* Space between sections */
+.snippets,
+.clipboard {
+  margin-bottom: 8rem;
+}
+
+/* Company logos */
+.companies {
+  display: grid;
+  gap: 5rem;
+  justify-content: center;
+  /* t-r-b-l */
+  margin: 13rem 0 13rem 0;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8rem 0 0 0;
+  text-align: center;
+  /* fill container with content */
+  height: 100%;
+  background-color: #f3f5f7;
+}
+.footer-links {
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Bai Jamjuree", sans-serif;
+  color: var(--dark-grayish-blue);
+  font-size: 2.5rem;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--strong-cyan);
+}
+
+.col1 {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+}
+.col2 {
+  display: flex;
+  margin-top: 7rem;
+  justify-content: center;
+  text-align: center;
+  gap: 5rem;
+}
+
+.logo_footer {
+  width: 8rem;
+}
+
+/* Desktop: min-wdth >= */
+
+@media (min-width: 50em) {
+  .snip-header {
+    width: 50%;
+    margin: auto;
+  }
+}
+@media (min-width: 95em) {
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  .flex-btn {
+    flex-direction: row;
+  }
+  .snippets {
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .snip-col {
+    text-align: start;
+    /* t-r-b-l */
+    margin: 2rem 0 0 10rem;
+    width: 60%;
+  }
+  .icons {
+    display: grid;
+    gap: 8rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .companies {
+    display: flex;
+    gap: 11rem;
+  }
+  .container-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  a {
+    font-size: 2rem;
+  }
+  .footer {
+    padding: 2rem 0 5rem 0;
+  }
+  .footer-links {
+    margin-bottom: 0;
+  }
+  .col1 {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+  .col2 {
+    margin-bottom: 1rem;
+  }
+  .logo_footer {
+    margin-bottom: 1rem;
+  }
+}
+/* big screen */
+@media (min-width: 120em) {
+  .col1 {
+    margin-bottom: 4rem;
+  }
+}
